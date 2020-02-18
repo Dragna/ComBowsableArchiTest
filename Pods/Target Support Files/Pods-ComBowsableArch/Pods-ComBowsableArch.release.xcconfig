@@ -1,0 +1,12 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bow" "${PODS_CONFIGURATION_BUILD_DIR}/BowEffects" "${PODS_CONFIGURATION_BUILD_DIR}/BowFree" "${PODS_CONFIGURATION_BUILD_DIR}/BowGeneric" "${PODS_CONFIGURATION_BUILD_DIR}/BowOptics" "${PODS_CONFIGURATION_BUILD_DIR}/BowRecursionSchemes"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Bow/Bow.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/BowEffects/BowEffects.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/BowFree/BowFree.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/BowGeneric/BowGeneric.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/BowOptics/BowOptics.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/BowRecursionSchemes/BowRecursionSchemes.framework/Headers"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_LDFLAGS = $(inherited) -framework "Bow" -framework "BowEffects" -framework "BowFree" -framework "BowGeneric" -framework "BowOptics" -framework "BowRecursionSchemes"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

@@ -1,0 +1,6 @@
+framework module Pods_ComBowsableArchTests {
+  umbrella header "Pods-ComBowsableArchTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

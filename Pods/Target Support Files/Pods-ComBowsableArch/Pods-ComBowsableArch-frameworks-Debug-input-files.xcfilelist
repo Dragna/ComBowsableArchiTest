@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-ComBowsableArch/Pods-ComBowsableArch-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Bow/Bow.framework
+${BUILT_PRODUCTS_DIR}/BowEffects/BowEffects.framework
+${BUILT_PRODUCTS_DIR}/BowFree/BowFree.framework
+${BUILT_PRODUCTS_DIR}/BowGeneric/BowGeneric.framework
+${BUILT_PRODUCTS_DIR}/BowOptics/BowOptics.framework
+${BUILT_PRODUCTS_DIR}/BowRecursionSchemes/BowRecursionSchemes.framework

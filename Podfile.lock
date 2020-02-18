@@ -1,0 +1,41 @@
+PODS:
+  - Bow (0.7.0)
+  - BowEffects (0.7.0):
+    - Bow (~> 0.7.0)
+  - BowFree (0.7.0):
+    - Bow (~> 0.7.0)
+  - BowGeneric (0.7.0):
+    - Bow (~> 0.7.0)
+  - BowOptics (0.7.0):
+    - Bow (~> 0.7.0)
+  - BowRecursionSchemes (0.7.0):
+    - Bow (~> 0.7.0)
+
+DEPENDENCIES:
+  - Bow (~> 0.7.0)
+  - BowEffects (~> 0.7.0)
+  - BowFree (~> 0.7.0)
+  - BowGeneric (~> 0.7.0)
+  - BowOptics (~> 0.7.0)
+  - BowRecursionSchemes (~> 0.7.0)
+
+SPEC REPOS:
+  trunk:
+    - Bow
+    - BowEffects
+    - BowFree
+    - BowGeneric
+    - BowOptics
+    - BowRecursionSchemes
+
+SPEC CHECKSUMS:
+  Bow: 3561cae6b993e4c37f507e03dd89859538d8ec12
+  BowEffects: 235d503f2e438ab9fdf84e074f586c806d8dec31
+  BowFree: 2c0ef44f40bf12f63edc8b60ec881fada1145dfd
+  BowGeneric: 8ad67728410b2a50cf681b3bfbf92b86b6b8a07b
+  BowOptics: 1d6c742c8144117b7ff76d2ce14839aac2619d82
+  BowRecursionSchemes: a62b201be5440e95e2e514b08c163e55e5dc9195
+
+PODFILE CHECKSUM: a2abd90497f00755391277d1ff21138f9dd753f5
+
+COCOAPODS: 1.8.4

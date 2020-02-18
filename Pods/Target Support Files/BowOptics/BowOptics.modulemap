@@ -1,0 +1,6 @@
+framework module BowOptics {
+  umbrella header "BowOptics-umbrella.h"
+
+  export *
+  module * { export * }
+}

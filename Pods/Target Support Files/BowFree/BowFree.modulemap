@@ -1,0 +1,6 @@
+framework module BowFree {
+  umbrella header "BowFree-umbrella.h"
+
+  export *
+  module * { export * }
+}
