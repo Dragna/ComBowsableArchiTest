@@ -10,6 +10,11 @@ import Foundation
 import BowEffects
 import Bow
 
+extension DispatchQueue {
+  class var currentLabel: String {
+    return String(validatingUTF8: __dispatch_queue_get_label(nil)) ?? ""
+  }
+}
 
 public final class Store<Value, Action>: ObservableObject {
     private let reducer: Reducer<Value, Action>
@@ -22,27 +27,32 @@ public final class Store<Value, Action>: ObservableObject {
     }
 
     public func send(_ action: Action) {
-        let effects = self.reducer(&self.value, action)
-        print(effects)
-        effects.forEach { effect in
-//            let action = IO<Never, Action>.var()
-//            let sendEffect = binding(
-//                continueOn(.global(qos: .userInitiated)),
-//                action <- effect,
-//                |<-ConsoleIO.print("action is \(action.get)"),
-//                continueOn(.main),
-//                |<-IO.invoke { self.send(action.get) },
-//                yield: ()
-//            )^
-//            sendEffect.unsafeRunAsync({ _ in
-//
-//            })
-            
-            effect.continueOn(.global(qos: .background))^.unsafeRunAsync(on: .main,
-            { resultAction in
-                print(resultAction)
-                self.send(resultAction.rightValue) //Should never error out
-            })
+        DispatchQueue.main.async {
+            print("send method called on \(DispatchQueue.currentLabel)")
+            let effects = self.reducer(&self.value, action)
+            print(effects)
+            effects.forEach { effect in
+//                let action = IO<Never, Action>.var()
+//                let sendEffect = binding(
+//                    |<-ConsoleIO.print("starting work ! \(DispatchQueue.currentLabel)"),
+//                    continueOn(.global(qos: .userInitiated)),
+//                    action <- effect,
+//                    |<-ConsoleIO.print("action is \(action.get) on \(DispatchQueue.currentLabel)"),
+//                    continueOn(.main),
+//                    |<-ConsoleIO.print("will call send method on \(DispatchQueue.currentLabel)"),
+//                    |<-IO.invoke { self.send(action.get) },
+//                    yield: ()
+//                )^
+//                sendEffect.unsafeRunAsync({ _ in
+//    
+//                })
+                
+                effect.unsafeRunAsync(on: .global(qos: .userInitiated),
+                { resultAction in
+                    print("Resulting action : \(resultAction) on \(DispatchQueue.currentLabel)")
+                    self.send(resultAction.rightValue) //Should never error out
+                })
+            }
         }
     }
 
